@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+gunicorn
+jinja2
+itsdangerous
+pytest
+httpx
+anyio[trio]
+pytest-asyncio
+python-multipart

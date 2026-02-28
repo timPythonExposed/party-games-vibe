@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Arena{% endblock %}
+{% block content %}
+<div class="arena-play-screen">
+  <header class="page-header">
+    <h1>👾 Arena</h1>
+    <p class="subtitle">Schiet vijanden neer en blijf in leven!</p>
+  </header>
+
+  <!-- Setup -->
+  <div class="arena-setup" id="arenaSetup">
+    <div class="arena-setup-group">
+      <p class="arena-setup-label">Hoeveel spelers?</p>
+      <div class="arena-player-btns">
+        <button class="btn btn-primary arena-pick-btn" data-players="1">1</button>
+        <button class="btn btn-primary arena-pick-btn" data-players="2">2</button>
+        <button class="btn btn-primary arena-pick-btn" data-players="3">3</button>
+        <button class="btn btn-primary arena-pick-btn" data-players="4">4</button>
+      </div>
+    </div>
+    <div class="arena-setup-group">
+      <p class="arena-setup-label">Hoeveel levens?</p>
+      <div class="arena-life-btns">
+        <button class="btn btn-outline arena-life-btn" data-lives="1">1</button>
+        <button class="btn btn-outline arena-life-btn active" data-lives="3">3</button>
+        <button class="btn btn-outline arena-life-btn" data-lives="5">5</button>
+        <button class="btn btn-outline arena-life-btn" data-lives="10">10</button>
+      </div>
+    </div>
+    <div class="arena-setup-group">
+      <p class="arena-setup-label">Moeilijkheid</p>
+      <div class="arena-diff-btns">
+        <button class="btn btn-outline arena-diff-btn" data-diff="easy">🟢 Makkelijk</button>
+        <button class="btn btn-outline arena-diff-btn active" data-diff="normal">🟡 Normaal</button>
+        <button class="btn btn-outline arena-diff-btn" data-diff="hard">🔴 Moeilijk</button>
+      </div>
+    </div>
+    <div class="arena-setup-group">
+      <label style="display:flex;align-items:center;gap:.5rem;justify-content:center;cursor:pointer">
+        <input type="checkbox" id="arenaFriendlyFire">
+        <span>🔥 Friendly fire (kogels raken teamgenoten)</span>
+      </label>
+    </div>
+    <div class="arena-setup-group">
+      <p class="arena-setup-label">🏆 High Scores</p>
+      <div id="arenaHighScores" style="font-size:.85rem;max-width:400px;margin:0 auto;text-align:left"></div>
+    </div>
+    <button class="btn btn-primary btn-lg" id="arenaStartBtn" disabled>Start spel ▶</button>
+  </div>
+
+  <!-- Game area -->
+  <div class="arena-game" id="arenaGame" hidden>
+    <div class="arena-hud" id="arenaHud"></div>
+
+    <div class="arena-canvas-wrap">
+      <canvas id="arenaCanvas" width="700" height="500"></canvas>
+      <div class="arena-overlay" id="arenaOverlay">
+        <div class="arena-overlay-text" id="arenaMsg">
+          <span class="arena-big">Klaar? Druk op een beweeg-toets!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="arena-controls-hint" id="arenaControls"></div>
+
+    <div class="btn-group btn-group--secondary">
+      <button class="btn btn-outline" id="arenaBackBtn">🔙 Opnieuw instellen</button>
+      <a href="/" class="btn btn-outline">🏠 Ander spel</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initArenaPlay(); });</script>
+{% endblock %}

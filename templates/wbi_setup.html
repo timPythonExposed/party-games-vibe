@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Wie Ben Ik? – Categorieën{% endblock %}
+{% block content %}
+<header class="page-header">
+  <h1>Wie Ben Ik?</h1>
+  <p class="subtitle">Kies categorieën en start!</p>
+</header>
+
+<details class="rules-box">
+  <summary class="rules-toggle">Spelregels</summary>
+  <div class="rules-content">
+    <p>Een persoon wordt op het scherm getoond. De rader kijkt <strong>niet</strong> naar het scherm en stelt ja/nee vragen om te raden wie het is!</p>
+    <p class="rules-tip">💡 Draai het scherm zo dat iedereen behalve de rader het kan zien!</p>
+  </div>
+</details>
+
+{% if request.query_params.get('error') == 'no_selection' %}
+<div class="alert">Selecteer minstens één categorie!</div>
+{% endif %}
+
+<form method="post" action="/wbi/start">
+  <div class="category-grid">
+    <label class="category-card category-card--all">
+      <input type="checkbox" name="categories" value="alle">
+      <span class="card-name">Alles</span>
+      <span class="card-count">{{ categories.values()|sum }} personen</span>
+    </label>
+    {% for name, count in categories.items() %}
+    <label class="category-card">
+      <input type="checkbox" name="categories" value="{{ name }}">
+      <span class="card-name">{{ category_meta[name].label }}</span>
+      <span class="card-count">{{ count }} personen</span>
+    </label>
+    {% endfor %}
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg">Start spel</button>
+  <a href="/" class="btn btn-outline">Terug</a>
+</form>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Kies een spel{% endblock %}
+{% block content %}
+<header class="page-header">
+  <h1>🎉 {{ app_name }}</h1>
+  <p class="subtitle">Kies een spel en laat het feest beginnen!</p>
+  <button type="button" class="icon-btn theme-toggle" id="themeToggle" aria-label="Wissel thema">
+    <span class="icon-sun">&#9728;</span><span class="icon-moon">&#9790;</span>
+  </button>
+</header>
+
+<div class="game-picker">
+  <a href="/runner" class="game-card game-card--runner">
+    <span class="game-card-icon">🦖</span>
+    <h2>Wachtkamer</h2>
+    <p>Wachten op de rest? Speel een potje dino-run met max 4 spelers op 1 toetsenbord!</p>
+  </a>
+  <a href="/arena" class="game-card game-card--arena">
+    <span class="game-card-icon">👾</span>
+    <h2>Arena</h2>
+    <p>Schiet vijanden neer met max 4 spelers op 1 toetsenbord. Blijf in leven!</p>
+  </a>
+  <a href="/hints" class="game-card game-card--hints">
+    <span class="game-card-icon">🤝</span>
+    <h2>Hints</h2>
+    <p>Beeld het woord uit zonder te praten. Jouw team raadt!</p>
+  </a>
+  <a href="/pictionary" class="game-card game-card--pictionary">
+    <span class="game-card-icon">🎨</span>
+    <h2>Pictionary</h2>
+    <p>Teken het woord en laat je team raden!</p>
+  </a>
+  <a href="/guess-the-year" class="game-card game-card--gty">
+    <span class="game-card-icon">📅</span>
+    <h2>Raad het Jaar</h2>
+    <p>Luister naar het nummer en raad het uitbrengingsjaar!</p>
+  </a>
+  <a href="/thirty-seconds" class="game-card game-card--ts">
+    <span class="game-card-icon">⏱️</span>
+    <h2>30 Seconds</h2>
+    <p>Beschrijf 5 woorden in 30 seconden. Wie bereikt als eerste de finish?</p>
+  </a>
+  <a href="/taboe" class="game-card game-card--taboe">
+    <span class="game-card-icon">🚫</span>
+    <h2>Taboe</h2>
+    <p>Beschrijf het woord zonder de verboden woorden te gebruiken!</p>
+  </a>
+  <a href="/wie-ben-ik" class="game-card game-card--wbi">
+    <span class="game-card-icon">🎭</span>
+    <h2>Wie Ben Ik?</h2>
+    <p>Stel ja/nee vragen en raad welke persoon op het scherm staat!</p>
+  </a>
+  <a href="/muziekbingo" class="game-card game-card--mbingo">
+    <span class="game-card-icon">🎵</span>
+    <h2>Muziekbingo</h2>
+    <p>Luister naar nummers en vink je bingokaart af. Wie roept eerst BINGO?</p>
+  </a>
+  <a href="/dit-of-dat" class="game-card game-card--dod">
+    <span class="game-card-icon">⚡</span>
+    <h2>Dit of Dat</h2>
+    <p>Kies tussen twee opties en verdedig je keuze. Leuk debat gegarandeerd!</p>
+  </a>
+  <a href="/bluf" class="game-card game-card--bluf">
+    <span class="game-card-icon">🃏</span>
+    <h2>Bluf</h2>
+    <p>Is het waar of niet waar? Raad juist en scoor punten voor je team!</p>
+  </a>
+  <a href="/schattingen" class="game-card game-card--schat">
+    <span class="game-card-icon">🎯</span>
+    <h2>Schattingen</h2>
+    <p>Wie kan het beste schatten? Het dichtst bij het antwoord wint het punt!</p>
+  </a>
+  <a href="/emoji-quiz" class="game-card game-card--emoji">
+    <span class="game-card-icon">😀🧩</span>
+    <h2>Emoji Quiz</h2>
+    <p>Welke film, persoon of merk zit er achter de emoji's? Raad het!</p>
+  </a>
+  <a href="/ranking" class="game-card game-card--ranking">
+    <span class="game-card-icon">📊</span>
+    <h2>Ranking</h2>
+    <p>Zet 5 items in de juiste volgorde. Welk team zit het dichtst bij?</p>
+  </a>
+  <a href="/categories" class="game-card game-card--cat">
+    <span class="game-card-icon">🏷️</span>
+    <h2>Categorieën</h2>
+    <p>Noem zoveel mogelijk dingen in de categorie met de juiste letter. 30 seconden!</p>
+  </a>
+  <a href="/timeline" class="game-card game-card--tl">
+    <span class="game-card-icon">⏳</span>
+    <h2>Tijdlijn</h2>
+    <p>In welk jaar gebeurde het? Raad het jaartal en scoor punten voor je team!</p>
+  </a>
+</div>
+{% endblock %}

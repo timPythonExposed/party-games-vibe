@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Bluf – Setup{% endblock %}
+{% block content %}
+<header class="page-header">
+  <h1>Bluf 🃏</h1>
+  <p class="subtitle">Waar of niet waar? Stel de teams in</p>
+</header>
+
+<details class="rules-box">
+  <summary class="rules-toggle">Spelregels</summary>
+  <div class="rules-content">
+    <p>Er wordt een stelling getoond. Elk team beslist: <strong>waar</strong> of <strong>niet waar</strong>?</p>
+    <p>Na het onthullen van het antwoord krijgt elk team dat juist gokten <strong>+1 punt</strong>.</p>
+    <p class="rules-tip">🃏 Eerste team dat de puntengrens bereikt wint!</p>
+  </div>
+</details>
+
+<form method="post" action="/bluf/start" class="settings-form">
+  <fieldset>
+    <legend>Aantal teams</legend>
+    <div class="radio-group">
+      {% for n in [2, 3, 4, 5, 6] %}
+      <label class="radio-card">
+        <input type="radio" name="num_teams" value="{{ n }}" {% if n == 2 %}checked{% endif %}>
+        <span>{{ n }}</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Teamnamen</legend>
+    <div class="gty-team-names" id="teamNamesContainer">
+      <div class="gty-team-input"><input type="text" name="team_0" placeholder="Team 1" class="text-input"></div>
+      <div class="gty-team-input"><input type="text" name="team_1" placeholder="Team 2" class="text-input"></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Punten om te winnen</legend>
+    <div class="radio-group">
+      {% for s in [5, 10, 15] %}
+      <label class="radio-card">
+        <input type="radio" name="points_to_win" value="{{ s }}" {% if s == 10 %}checked{% endif %}>
+        <span>{{ s }}</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary btn-lg">Start spel</button>
+  <a href="/" class="btn btn-outline">Terug</a>
+</form>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initGenericSetup(); });</script>
+{% endblock %}

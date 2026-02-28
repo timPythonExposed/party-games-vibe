@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Taboe – Setup{% endblock %}
+{% block content %}
+<header class="page-header">
+  <h1>Taboe</h1>
+  <p class="subtitle">Stel de teams en speelregels in</p>
+</header>
+
+<details class="rules-box">
+  <summary class="rules-toggle">Spelregels</summary>
+  <div class="rules-content">
+    <p>Beschrijf het woord bovenaan de kaart zonder de 5 verboden woorden te gebruiken!</p>
+    <h3>De omschrijver mag NIET:</h3>
+    <ul class="rules-forbidden">
+      <li>De verboden woorden zeggen</li>
+      <li>Delen van de verboden woorden zeggen</li>
+      <li>Gebaren naar het woord</li>
+      <li>De beginletter noemen</li>
+      <li>Zeggen waarop het rijmt</li>
+    </ul>
+    <p class="rules-tip">💡 Bij correct: +1 punt. Bij taboe-overtreding: −1 punt. Zoveel kaarten als je kan in 60 seconden!</p>
+  </div>
+</details>
+
+<form method="post" action="/taboe/start" class="settings-form">
+  <fieldset>
+    <legend>Aantal teams</legend>
+    <div class="radio-group">
+      {% for n in [2, 3, 4, 5, 6] %}
+      <label class="radio-card">
+        <input type="radio" name="num_teams" value="{{ n }}" {% if n == 2 %}checked{% endif %}>
+        <span>{{ n }}</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Teamnamen</legend>
+    <div class="gty-team-names" id="teamNamesContainer">
+      <div class="gty-team-input"><input type="text" name="team_0" placeholder="Team 1" class="text-input"></div>
+      <div class="gty-team-input"><input type="text" name="team_1" placeholder="Team 2" class="text-input"></div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Finish (aantal punten)</legend>
+    <div class="radio-group">
+      {% for s in [15, 25, 35] %}
+      <label class="radio-card">
+        <input type="radio" name="finish_score" value="{{ s }}" {% if s == 25 %}checked{% endif %}>
+        <span>{{ s }}</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary btn-lg">Start spel</button>
+  <a href="/" class="btn btn-outline">Terug</a>
+</form>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initGenericSetup(); });</script>
+{% endblock %}

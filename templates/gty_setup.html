@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Raad het Jaar – Teams instellen{% endblock %}
+{% block content %}
+<header class="page-header">
+  <h1>Teams instellen</h1>
+  <p class="subtitle">Stel de teams en speelregels in</p>
+</header>
+
+<form method="post" action="/gty/start" id="gtySetupForm" class="settings-form">
+  <fieldset>
+    <legend>Aantal teams</legend>
+    <div class="radio-group">
+      {% for n in [2, 3, 4, 5, 6] %}
+      <label class="radio-card">
+        <input type="radio" name="num_teams" value="{{ n }}" {% if n == 2 %}checked{% endif %}>
+        <span>{{ n }}</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Teamnamen</legend>
+    <div class="gty-team-names" id="teamNamesContainer">
+      <div class="gty-team-input">
+        <input type="text" name="team_0" placeholder="Team 1" class="text-input">
+      </div>
+      <div class="gty-team-input">
+        <input type="text" name="team_1" placeholder="Team 2" class="text-input">
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Rondes om te winnen</legend>
+    <div class="radio-group">
+      {% for r in [5, 10, 15] %}
+      <label class="radio-card">
+        <input type="radio" name="rounds_to_win" value="{{ r }}" {% if r == 5 %}checked{% endif %}>
+        <span>{{ r }}</span>
+      </label>
+      {% endfor %}
+      <label class="radio-card radio-card--custom">
+        <span>Anders:</span>
+        <input type="number" name="rounds_to_win_custom" id="roundsCustom" min="1" max="99" placeholder="..." class="text-input text-input--inline">
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Moeilijkheidsgraad</legend>
+    <div class="radio-group">
+      <label class="radio-card">
+        <input type="radio" name="difficulty" value="makkelijk">
+        <span>Makkelijk</span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="difficulty" value="normaal" checked>
+        <span>Normaal</span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="difficulty" value="moeilijk">
+        <span>Moeilijk</span>
+      </label>
+    </div>
+    <p class="field-hint">Makkelijk = bekende nummers (hoog in de lijst), Moeilijk = minder bekende nummers</p>
+  </fieldset>
+
+  <button type="submit" class="btn btn-primary btn-lg">Start spel</button>
+  <a href="/guess-the-year" class="btn btn-outline">Terug naar lijsten</a>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initGtySetup();
+  });
+</script>
+{% endblock %}

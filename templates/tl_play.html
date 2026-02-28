@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Tijdlijn{% endblock %}
+{% block content %}
+<div class="tl-play-screen">
+  <div class="ts-scoreboard" id="scoreboard"></div>
+
+  <div class="bluf-round" id="roundInfo"></div>
+
+  <!-- Phase: waiting for next event -->
+  <div class="tl-phase" id="phaseNext">
+    <p class="bluf-instruction">Klaar voor het volgende evenement?</p>
+    <button class="btn btn-primary btn-lg" id="nextEventBtn">⏳ Volgend evenement</button>
+  </div>
+
+  <!-- Phase: event shown, teams guess -->
+  <div class="tl-phase" id="phaseGuess" hidden>
+    <div class="tl-event-card">
+      <p class="tl-event-text" id="eventText"></p>
+    </div>
+    <div class="tl-guess-section" id="guessSection"></div>
+    <button class="btn btn-primary btn-lg" id="revealBtn" disabled>🔍 Onthul jaar</button>
+  </div>
+
+  <!-- Phase: year revealed -->
+  <div class="tl-phase" id="phaseReveal" hidden>
+    <div class="tl-event-card">
+      <p class="tl-event-text" id="revealEventText"></p>
+    </div>
+    <div class="tl-year-card" id="yearCard">
+      <div class="tl-year-value" id="yearValue"></div>
+    </div>
+    <div class="tl-guess-results" id="guessResults"></div>
+    <button class="btn btn-primary btn-lg" id="nextAfterRevealBtn">Volgend evenement ➜</button>
+  </div>
+
+  <div class="btn-group btn-group--secondary">
+    <a href="/tl/setup" class="btn btn-outline">Nieuw spel</a>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <div class="overlay" id="winnerOverlay" hidden>
+    <div class="overlay-content">
+      <div class="overlay-icon">🏆</div>
+      <h2 id="winnerText"></h2>
+      <p>Gefeliciteerd!</p>
+      <a href="/tl/setup" class="btn btn-primary">Nieuw spel</a>
+      <a href="/" class="btn btn-secondary">Home</a>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initTlPlay(); });</script>
+{% endblock %}

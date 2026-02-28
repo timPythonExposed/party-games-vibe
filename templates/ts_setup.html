@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – 30 Seconds – Teams instellen{% endblock %}
+{% block content %}
+<header class="page-header">
+  <h1>30 Seconds</h1>
+  <p class="subtitle">Stel de teams en speelregels in</p>
+</header>
+
+<details class="rules-box">
+  <summary class="rules-toggle">Spelregels</summary>
+  <div class="rules-content">
+    <p>Spelers worden in teams verdeeld. Elk team speurt om als eerste de finish te bereiken.</p>
+    <h3>Elke beurt</h3>
+    <ol>
+      <li><strong>Gooi de dobbelsteen</strong> om je handicap te bepalen (0, 1 of 2).</li>
+      <li><strong>Trek een kaart</strong> met 5 woorden.</li>
+      <li>De <strong>omschrijver</strong> beschrijft de woorden in 30 seconden – de rest van het team raadt.</li>
+      <li>Score = aantal juiste − handicap (minimum 0). Je pion schuift zoveel vakjes op.</li>
+    </ol>
+    <h3>De omschrijver mag NIET:</h3>
+    <ul class="rules-forbidden">
+      <li>De woorden op de kaart benoemen</li>
+      <li>Afgeleide woorden gebruiken</li>
+      <li>De beginletter zeggen</li>
+      <li>Woorden vertalen</li>
+      <li>Zeggen hoe het klinkt of waar het op rijmt</li>
+      <li>Naar objecten in de kamer wijzen</li>
+    </ul>
+    <p class="rules-tip">💡 De omschrijver moet elke beurt rouleren binnen het team!</p>
+  </div>
+</details>
+
+<form method="post" action="/ts/start" id="tsSetupForm" class="settings-form">
+  <fieldset>
+    <legend>Aantal teams</legend>
+    <div class="radio-group">
+      {% for n in [2, 3, 4, 5, 6] %}
+      <label class="radio-card">
+        <input type="radio" name="num_teams" value="{{ n }}" {% if n == 2 %}checked{% endif %}>
+        <span>{{ n }}</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Teamnamen</legend>
+    <div class="gty-team-names" id="teamNamesContainer">
+      <div class="gty-team-input">
+        <input type="text" name="team_0" placeholder="Team 1" class="text-input">
+      </div>
+      <div class="gty-team-input">
+        <input type="text" name="team_1" placeholder="Team 2" class="text-input">
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Finish (aantal vakjes)</legend>
+    <div class="radio-group">
+      {% for s in [20, 30, 40] %}
+      <label class="radio-card">
+        <input type="radio" name="finish_score" value="{{ s }}" {% if s == 30 %}checked{% endif %}>
+        <span>{{ s }}</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+
+  <button type="submit" class="btn btn-primary btn-lg">Start spel</button>
+  <a href="/" class="btn btn-outline">Terug</a>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initTsSetup();
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Bluf{% endblock %}
+{% block content %}
+<div class="bluf-play-screen">
+  <div class="ts-scoreboard" id="scoreboard"></div>
+
+  <div class="bluf-round" id="roundInfo"></div>
+
+  <!-- Phase: waiting for next statement -->
+  <div class="bluf-phase" id="phaseNext">
+    <p class="bluf-instruction">Klaar voor de volgende stelling?</p>
+    <button class="btn btn-primary btn-lg" id="nextStatementBtn">📜 Volgende stelling</button>
+  </div>
+
+  <!-- Phase: statement shown, teams vote -->
+  <div class="bluf-phase" id="phaseVote" hidden>
+    <div class="bluf-statement-card" id="statementCard">
+      <p class="bluf-statement" id="statementText"></p>
+    </div>
+    <div class="bluf-vote-section" id="voteSection"></div>
+    <button class="btn btn-primary btn-lg" id="revealBtn" disabled>🔍 Onthul antwoord</button>
+  </div>
+
+  <!-- Phase: answer revealed -->
+  <div class="bluf-phase" id="phaseReveal" hidden>
+    <div class="bluf-statement-card">
+      <p class="bluf-statement" id="revealStatementText"></p>
+    </div>
+    <div class="bluf-answer-card" id="answerCard">
+      <div class="bluf-answer-badge" id="answerBadge"></div>
+      <p class="bluf-explanation" id="explanationText"></p>
+    </div>
+    <div class="bluf-vote-results" id="voteResults"></div>
+    <button class="btn btn-primary btn-lg" id="nextAfterRevealBtn">Volgende stelling ➜</button>
+  </div>
+
+  <div class="btn-group btn-group--secondary">
+    <a href="/bluf/setup" class="btn btn-outline">Nieuw spel</a>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <div class="overlay" id="winnerOverlay" hidden>
+    <div class="overlay-content">
+      <div class="overlay-icon">🏆</div>
+      <h2 id="winnerText"></h2>
+      <p>Gefeliciteerd!</p>
+      <a href="/bluf/setup" class="btn btn-primary">Nieuw spel</a>
+      <a href="/" class="btn btn-secondary">Home</a>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initBlufPlay(); });</script>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Instellingen{% endblock %}
+{% block content %}
+<header class="page-header">
+  <h1>Instellingen</h1>
+</header>
+
+<div class="settings-form" id="settingsForm">
+  <fieldset>
+    <legend>Timer (seconden)</legend>
+    <div class="radio-group">
+      <label class="radio-card">
+        <input type="radio" name="timer" value="0">
+        <span>Uit</span>
+      </label>
+      {% for s in [15, 30, 45, 60, 90] %}
+      <label class="radio-card">
+        <input type="radio" name="timer" value="{{ s }}" {% if s == 60 %}checked{% endif %}>
+        <span>{{ s }}s</span>
+      </label>
+      {% endfor %}
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Tekstgrootte</legend>
+    <div class="radio-group">
+      <label class="radio-card">
+        <input type="radio" name="textScale" value="normal" checked>
+        <span>Normaal</span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="textScale" value="large">
+        <span>Groot</span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="textScale" value="mega">
+        <span>Mega-groot</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Thema</legend>
+    <div class="radio-group">
+      <label class="radio-card">
+        <input type="radio" name="theme" value="light">
+        <span>Licht</span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="theme" value="dark" checked>
+        <span>Donker</span>
+      </label>
+      <label class="radio-card">
+        <input type="radio" name="theme" value="system">
+        <span>Systeem</span>
+      </label>
+    </div>
+  </fieldset>
+
+  <button class="btn btn-primary btn-lg" id="saveSettingsBtn">Opslaan</button>
+  <a href="/play" class="btn btn-outline">Terug</a>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initSettings();
+  });
+</script>
+{% endblock %}

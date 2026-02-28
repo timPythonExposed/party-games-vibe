@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Wachtkamer{% endblock %}
+{% block content %}
+<div class="runner-play-screen">
+  <header class="page-header">
+    <h1>🦖 Wachtkamer</h1>
+    <p class="subtitle">Even wachten tot iedereen er is? Speel een potje!</p>
+  </header>
+
+  <!-- Player count selection -->
+  <div class="runner-setup" id="runnerSetup">
+    <p class="runner-setup-label">Hoeveel spelers?</p>
+    <div class="runner-player-btns">
+      <button class="btn btn-primary runner-pick-btn" data-players="1">1 speler</button>
+      <button class="btn btn-primary runner-pick-btn" data-players="2">2 spelers</button>
+      <button class="btn btn-primary runner-pick-btn" data-players="3">3 spelers</button>
+      <button class="btn btn-primary runner-pick-btn" data-players="4">4 spelers</button>
+    </div>
+  </div>
+
+  <!-- Game area (hidden until player count chosen) -->
+  <div class="runner-game" id="runnerGame" hidden>
+    <div class="runner-hud" id="runnerHud"></div>
+
+    <div class="runner-canvas-wrap" id="runnerWrap">
+      <canvas id="runnerCanvas" width="700" height="200"></canvas>
+      <div class="runner-overlay" id="runnerOverlay">
+        <div class="runner-overlay-text" id="runnerMsg">
+          <span class="runner-big">Klaar? Iedereen springt met hun toets!</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="runner-controls-hint" id="runnerControls"></div>
+
+    <div class="btn-group btn-group--secondary">
+      <button class="btn btn-outline" id="runnerBackBtn">🔙 Kies opnieuw</button>
+      <a href="/" class="btn btn-outline">🏠 Ander spel</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initRunnerPlay(); });</script>
+{% endblock %}

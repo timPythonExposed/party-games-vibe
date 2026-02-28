@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – 30 Seconds{% endblock %}
+{% block content %}
+<div class="ts-play-screen">
+  <!-- Scoreboard -->
+  <div class="ts-scoreboard" id="scoreboard"></div>
+
+  <!-- Progress bar (board) -->
+  <div class="ts-board-track">
+    <div class="ts-board-labels">
+      <span>START</span>
+      <span id="finishLabel">FINISH</span>
+    </div>
+    <div class="ts-board-bar-bg">
+      <div id="boardBars"></div>
+    </div>
+  </div>
+
+  <!-- Current team indicator -->
+  <div class="ts-current-team" id="currentTeam"></div>
+
+  <!-- Phase: Roll dice -->
+  <div class="ts-phase" id="phaseRoll">
+    <p class="ts-instruction">Gooi de dobbelsteen om de handicap te bepalen</p>
+    <button class="btn btn-primary btn-lg" id="rollBtn">🎲 Gooi dobbelsteen</button>
+  </div>
+
+  <!-- Dice result -->
+  <div class="ts-dice-result" id="diceResult" hidden>
+    <div class="ts-dice-value" id="diceValue"></div>
+    <div class="ts-dice-label">handicap</div>
+  </div>
+
+  <!-- Phase: Draw card -->
+  <div class="ts-phase" id="phaseDraw" hidden>
+    <p class="ts-instruction">Klaar? Trek een kaart met 5 woorden!</p>
+    <button class="btn btn-primary btn-lg" id="drawBtn">🃏 Trek kaart</button>
+  </div>
+
+  <!-- Phase: Play (30 sec timer + words) -->
+  <div class="ts-phase" id="phasePlay" hidden>
+    <!-- Timer -->
+    <div class="timer-bar-track">
+      <div class="timer-bar" id="timerBar"></div>
+    </div>
+    <div class="timer-display ts-timer-display" id="timerDisplay">30</div>
+
+    <!-- Word cards -->
+    <div class="ts-words-container" id="wordsContainer"></div>
+  </div>
+
+  <!-- Phase: Score -->
+  <div class="ts-phase" id="phaseScore" hidden>
+    <h2 class="ts-score-title">Tijd is om!</h2>
+    <p class="ts-instruction">Duid de correct geraden woorden aan:</p>
+    <div class="ts-words-check" id="wordsCheck"></div>
+    <div class="ts-score-summary" id="scoreSummary"></div>
+    <button class="btn btn-primary btn-lg" id="submitScoreBtn">Bevestig score</button>
+  </div>
+
+  <!-- Navigation -->
+  <div class="btn-group btn-group--secondary ts-nav">
+    <button class="btn btn-outline" id="undoBtn" disabled>↩ Ongedaan maken</button>
+    <a href="/ts/setup" class="btn btn-outline">Nieuw spel</a>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <!-- Winner overlay -->
+  <div class="overlay" id="winnerOverlay" hidden>
+    <div class="overlay-content">
+      <div class="overlay-icon">🏆</div>
+      <h2 id="winnerText"></h2>
+      <p>Gefeliciteerd!</p>
+      <a href="/ts/setup" class="btn btn-primary">Nieuw spel</a>
+      <a href="/" class="btn btn-secondary">Home</a>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initTsPlay();
+  });
+</script>
+{% endblock %}

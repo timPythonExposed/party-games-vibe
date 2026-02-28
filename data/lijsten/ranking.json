@@ -1,0 +1,402 @@
+[
+  {
+    "question": "Rangschik deze landen van meeste naar minste inwoners",
+    "items": [
+      {"name": "China", "rank": 1},
+      {"name": "India", "rank": 2},
+      {"name": "Verenigde Staten", "rank": 3},
+      {"name": "Brazilië", "rank": 4},
+      {"name": "Nederland", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze gebouwen van hoogste naar laagste",
+    "items": [
+      {"name": "Burj Khalifa", "rank": 1},
+      {"name": "Shanghai Tower", "rank": 2},
+      {"name": "One World Trade Center", "rank": 3},
+      {"name": "Eiffeltoren", "rank": 4},
+      {"name": "Big Ben", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze dieren van zwaarste naar lichtste",
+    "items": [
+      {"name": "Blauwe vinvis", "rank": 1},
+      {"name": "Olifant", "rank": 2},
+      {"name": "Nijlpaard", "rank": 3},
+      {"name": "Leeuw", "rank": 4},
+      {"name": "Hond (gemiddeld)", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze planeten van dichtst bij de zon naar verst",
+    "items": [
+      {"name": "Mercurius", "rank": 1},
+      {"name": "Venus", "rank": 2},
+      {"name": "Aarde", "rank": 3},
+      {"name": "Mars", "rank": 4},
+      {"name": "Jupiter", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze landen van grootste oppervlakte naar kleinste",
+    "items": [
+      {"name": "Rusland", "rank": 1},
+      {"name": "Canada", "rank": 2},
+      {"name": "Australië", "rank": 3},
+      {"name": "India", "rank": 4},
+      {"name": "België", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze uitvindingen van oudste naar nieuwste",
+    "items": [
+      {"name": "Wiel", "rank": 1},
+      {"name": "Kompas", "rank": 2},
+      {"name": "Boekdrukkunst", "rank": 3},
+      {"name": "Telefoon", "rank": 4},
+      {"name": "Internet", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze rivieren van langste naar kortste",
+    "items": [
+      {"name": "Nijl", "rank": 1},
+      {"name": "Amazone", "rank": 2},
+      {"name": "Yangtze", "rank": 3},
+      {"name": "Donau", "rank": 4},
+      {"name": "Rijn", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze sporten op meeste beoefenaars wereldwijd",
+    "items": [
+      {"name": "Voetbal", "rank": 1},
+      {"name": "Cricket", "rank": 2},
+      {"name": "Hockey", "rank": 3},
+      {"name": "Tennis", "rank": 4},
+      {"name": "Tafeltennis", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze films op meeste box office opbrengst (ooit)",
+    "items": [
+      {"name": "Avatar", "rank": 1},
+      {"name": "Avengers: Endgame", "rank": 2},
+      {"name": "Titanic", "rank": 3},
+      {"name": "Star Wars: The Force Awakens", "rank": 4},
+      {"name": "The Lion King (2019)", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze oceanen van grootste naar kleinste",
+    "items": [
+      {"name": "Stille Oceaan", "rank": 1},
+      {"name": "Atlantische Oceaan", "rank": 2},
+      {"name": "Indische Oceaan", "rank": 3},
+      {"name": "Zuidelijke Oceaan", "rank": 4},
+      {"name": "Noordelijke IJszee", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze talen op meeste moedertaalsprekers",
+    "items": [
+      {"name": "Mandarijn", "rank": 1},
+      {"name": "Spaans", "rank": 2},
+      {"name": "Engels", "rank": 3},
+      {"name": "Hindi", "rank": 4},
+      {"name": "Arabisch", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze sociale media op meeste gebruikers (2024)",
+    "items": [
+      {"name": "Facebook", "rank": 1},
+      {"name": "YouTube", "rank": 2},
+      {"name": "WhatsApp", "rank": 3},
+      {"name": "Instagram", "rank": 4},
+      {"name": "TikTok", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze Europese steden op meeste toeristen per jaar",
+    "items": [
+      {"name": "Londen", "rank": 1},
+      {"name": "Parijs", "rank": 2},
+      {"name": "Istanbul", "rank": 3},
+      {"name": "Barcelona", "rank": 4},
+      {"name": "Amsterdam", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze snelheden van snelste naar langzaamste",
+    "items": [
+      {"name": "Lichtsnelheid", "rank": 1},
+      {"name": "Geluidssnelheid", "rank": 2},
+      {"name": "Formule 1 auto", "rank": 3},
+      {"name": "Cheetah", "rank": 4},
+      {"name": "Usain Bolt", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze voedingsmiddelen op meeste calorieën per 100g",
+    "items": [
+      {"name": "Boter", "rank": 1},
+      {"name": "Chocolade", "rank": 2},
+      {"name": "Kaas", "rank": 3},
+      {"name": "Brood", "rank": 4},
+      {"name": "Appel", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze landen op meeste FIFA WK-titels (voetbal)",
+    "items": [
+      {"name": "Brazilië", "rank": 1},
+      {"name": "Duitsland", "rank": 2},
+      {"name": "Italië", "rank": 3},
+      {"name": "Argentinië", "rank": 4},
+      {"name": "Frankrijk", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze bergen van hoogste naar laagste",
+    "items": [
+      {"name": "Mount Everest", "rank": 1},
+      {"name": "K2", "rank": 2},
+      {"name": "Mont Blanc", "rank": 3},
+      {"name": "Kilimanjaro", "rank": 4},
+      {"name": "Zugspitze", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze elementen op atoomnummer (laagste eerst)",
+    "items": [
+      {"name": "Waterstof", "rank": 1},
+      {"name": "Koolstof", "rank": 2},
+      {"name": "Stikstof", "rank": 3},
+      {"name": "IJzer", "rank": 4},
+      {"name": "Goud", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze dieren op levensverwachting (langste eerst)",
+    "items": [
+      {"name": "Groenlandse haai", "rank": 1},
+      {"name": "Reuzenschildpad", "rank": 2},
+      {"name": "Olifant", "rank": 3},
+      {"name": "Paard", "rank": 4},
+      {"name": "Hond", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze Nederlandse provincies op inwoneraantal",
+    "items": [
+      {"name": "Zuid-Holland", "rank": 1},
+      {"name": "Noord-Holland", "rank": 2},
+      {"name": "Noord-Brabant", "rank": 3},
+      {"name": "Gelderland", "rank": 4},
+      {"name": "Zeeland", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze temperaturen van warmste naar koudste",
+    "items": [
+      {"name": "Oppervlakte van de zon", "rank": 1},
+      {"name": "Lava", "rank": 2},
+      {"name": "Kokend water", "rank": 3},
+      {"name": "Lichaamstemperatuur", "rank": 4},
+      {"name": "Smeltend ijs", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze muziekgenres op populariteit (streaming 2024)",
+    "items": [
+      {"name": "Pop", "rank": 1},
+      {"name": "Hip-hop/Rap", "rank": 2},
+      {"name": "R&B", "rank": 3},
+      {"name": "Rock", "rank": 4},
+      {"name": "Jazz", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze valuta's op waarde t.o.v. de euro (hoogste eerst)",
+    "items": [
+      {"name": "Brits pond", "rank": 1},
+      {"name": "Euro", "rank": 2},
+      {"name": "Amerikaanse dollar", "rank": 3},
+      {"name": "Japanse yen", "rank": 4},
+      {"name": "Indonesische roepia", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze Nederlandse voetbalclubs op meeste landskampioenschappen",
+    "items": [
+      {"name": "Ajax", "rank": 1},
+      {"name": "PSV", "rank": 2},
+      {"name": "Feyenoord", "rank": 3},
+      {"name": "HVV Den Haag", "rank": 4},
+      {"name": "Willem II", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze dranken op cafeïnegehalte per kopje (meeste eerst)",
+    "items": [
+      {"name": "Espresso", "rank": 1},
+      {"name": "Filterkoffie", "rank": 2},
+      {"name": "Energiedrank", "rank": 3},
+      {"name": "Zwarte thee", "rank": 4},
+      {"name": "Cola", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze organen op gewicht (zwaarste eerst)",
+    "items": [
+      {"name": "Lever", "rank": 1},
+      {"name": "Hersenen", "rank": 2},
+      {"name": "Longen (samen)", "rank": 3},
+      {"name": "Hart", "rank": 4},
+      {"name": "Nieren (samen)", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze Belgische steden op inwoneraantal",
+    "items": [
+      {"name": "Brussel", "rank": 1},
+      {"name": "Antwerpen", "rank": 2},
+      {"name": "Gent", "rank": 3},
+      {"name": "Charleroi", "rank": 4},
+      {"name": "Brugge", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze voedselbezorgdiensten op omzet in de Benelux",
+    "items": [
+      {"name": "Thuisbezorgd/Just Eat", "rank": 1},
+      {"name": "Uber Eats", "rank": 2},
+      {"name": "Deliveroo", "rank": 3},
+      {"name": "Domino's", "rank": 4},
+      {"name": "New York Pizza", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze superhelden op eerste verschijning (oudste eerst)",
+    "items": [
+      {"name": "Superman", "rank": 1},
+      {"name": "Batman", "rank": 2},
+      {"name": "Captain America", "rank": 3},
+      {"name": "Spider-Man", "rank": 4},
+      {"name": "Wolverine", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze fruittypes op suikergehalte per 100g",
+    "items": [
+      {"name": "Dadels", "rank": 1},
+      {"name": "Druiven", "rank": 2},
+      {"name": "Banaan", "rank": 3},
+      {"name": "Appel", "rank": 4},
+      {"name": "Aardbei", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze Olympische Spelen-steden op jaar (oudste eerst)",
+    "items": [
+      {"name": "Athene (1896)", "rank": 1},
+      {"name": "Amsterdam (1928)", "rank": 2},
+      {"name": "München (1972)", "rank": 3},
+      {"name": "Barcelona (1992)", "rank": 4},
+      {"name": "Tokio (2021)", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze ruimtemissies op lanceeringsjaar (oudste eerst)",
+    "items": [
+      {"name": "Spoetnik 1", "rank": 1},
+      {"name": "Apollo 11 (maanlanding)", "rank": 2},
+      {"name": "Space Shuttle Columbia", "rank": 3},
+      {"name": "ISS voltooid", "rank": 4},
+      {"name": "SpaceX Crew Dragon", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze feestdagen op datum in het jaar (vroegste eerst)",
+    "items": [
+      {"name": "Nieuwjaar (1 jan)", "rank": 1},
+      {"name": "Valentijnsdag (14 feb)", "rank": 2},
+      {"name": "Koningsdag (27 apr)", "rank": 3},
+      {"name": "Halloween (31 okt)", "rank": 4},
+      {"name": "Kerstmis (25 dec)", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze websites op meeste dagelijkse bezoekers",
+    "items": [
+      {"name": "Google", "rank": 1},
+      {"name": "YouTube", "rank": 2},
+      {"name": "Facebook", "rank": 3},
+      {"name": "Wikipedia", "rank": 4},
+      {"name": "Reddit", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze materialen op hardheid (hardste eerst)",
+    "items": [
+      {"name": "Diamant", "rank": 1},
+      {"name": "Staal", "rank": 2},
+      {"name": "Glas", "rank": 3},
+      {"name": "Hout (eiken)", "rank": 4},
+      {"name": "Rubber", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze biermerken op jaarlijkse wereldwijde verkoop",
+    "items": [
+      {"name": "Snow (China)", "rank": 1},
+      {"name": "Budweiser", "rank": 2},
+      {"name": "Heineken", "rank": 3},
+      {"name": "Stella Artois", "rank": 4},
+      {"name": "Jupiler", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze kaassoorten op vetpercentage (meeste eerst)",
+    "items": [
+      {"name": "Mascarpone", "rank": 1},
+      {"name": "Brie", "rank": 2},
+      {"name": "Gouda belegen", "rank": 3},
+      {"name": "Mozzarella", "rank": 4},
+      {"name": "Hüttenkäse", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze pretparken op bezoekersaantal per jaar",
+    "items": [
+      {"name": "Magic Kingdom (Disney World)", "rank": 1},
+      {"name": "Disneyland Paris", "rank": 2},
+      {"name": "Universal Studios Japan", "rank": 3},
+      {"name": "Europa-Park", "rank": 4},
+      {"name": "Efteling", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze muziekinstrumenten op aantal snaren (meeste eerst)",
+    "items": [
+      {"name": "Piano (binnenkant)", "rank": 1},
+      {"name": "Harp", "rank": 2},
+      {"name": "Gitaar", "rank": 3},
+      {"name": "Viool", "rank": 4},
+      {"name": "Ukelele", "rank": 5}
+    ]
+  },
+  {
+    "question": "Rangschik deze Europese landen op lengte van de kustlijn",
+    "items": [
+      {"name": "Noorwegen", "rank": 1},
+      {"name": "Griekenland", "rank": 2},
+      {"name": "Verenigd Koninkrijk", "rank": 3},
+      {"name": "Italië", "rank": 4},
+      {"name": "België", "rank": 5}
+    ]
+  }
+]

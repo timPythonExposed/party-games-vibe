@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Raad het Jaar{% endblock %}
+{% block content %}
+<div class="gty-play-screen">
+  <!-- Scoreboard -->
+  <div class="gty-scoreboard" id="scoreboard"></div>
+
+  <!-- Year timelines per team -->
+  <div class="gty-timelines" id="yearTimelines"></div>
+
+  <!-- Jeton buttons per team -->
+  <div class="gty-jeton-buttons" id="jetonButtons"></div>
+
+  <!-- Round display -->
+  <div class="gty-round" id="roundDisplay"></div>
+
+  <!-- Song section: QR + YouTube -->
+  <div class="gty-song-section" id="songSection" hidden>
+    <div class="gty-qr-container" id="qrContainer">
+      <div class="gty-qr-placeholder" id="qrPlaceholder">Druk op "Volgend nummer"</div>
+      <img class="gty-qr-img" id="qrImage" hidden alt="Spotify QR code">
+    </div>
+    <div class="gty-links" id="songLinks" hidden>
+      <a class="btn gty-btn-youtube" id="youtubeLink" href="#" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+
+  <!-- Reveal section -->
+  <div class="gty-reveal" id="revealSection" hidden>
+    <div class="gty-year" id="revealYear"></div>
+    <div class="gty-artist-title" id="revealInfo"></div>
+  </div>
+
+  <!-- Action buttons -->
+  <div class="btn-group">
+    <button class="btn btn-primary btn-lg" id="nextSongBtn">Volgend nummer</button>
+  </div>
+  <div class="btn-group">
+    <button class="btn btn-secondary" id="revealBtn" disabled>Toon antwoord</button>
+    <button class="btn btn-secondary" id="undoBtn" disabled>Ongedaan maken</button>
+  </div>
+
+  <!-- Team award buttons -->
+  <div class="gty-award-buttons" id="awardButtons"></div>
+
+  <!-- Navigation -->
+  <div class="btn-group btn-group--secondary">
+    <a href="/guess-the-year" class="btn btn-outline">Muzieklijsten</a>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <!-- Winner overlay -->
+  <div class="overlay" id="winnerOverlay" hidden>
+    <div class="overlay-content">
+      <div class="overlay-icon">&#127942;</div>
+      <h2 id="winnerText"></h2>
+      <a href="/guess-the-year" class="btn btn-primary">Nieuw spel</a>
+      <a href="/" class="btn btn-secondary">Ander spel</a>
+    </div>
+  </div>
+
+  <!-- Empty pool overlay -->
+  <div class="overlay" id="emptyOverlay" hidden>
+    <div class="overlay-content">
+      <h2>Alle nummers gehad!</h2>
+      <p>Je hebt alle nummers in deze selectie gehad.</p>
+      <a href="/guess-the-year" class="btn btn-primary">Andere lijsten kiezen</a>
+      <a href="/" class="btn btn-secondary">Ander spel</a>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initGtyPlay();
+  });
+</script>
+{% endblock %}

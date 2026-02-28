@@ -1,1 +1,1 @@
-# party-games-vibe
+# party-games

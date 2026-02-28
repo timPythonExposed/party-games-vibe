@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Muziekbingo{% endblock %}
+{% block content %}
+<div class="mbingo-play-screen">
+  <!-- Score bar (compact) -->
+  <div class="mbingo-players" id="playerScores"></div>
+
+  <!-- Song area: compact row with QR + status -->
+  <div class="mbingo-now-playing" id="nowPlaying">
+    <div class="mbingo-qr-mini" id="qrMini">
+      <div class="mbingo-qr-placeholder" id="qrPlaceholder">▶</div>
+      <img class="mbingo-qr-img" id="qrImage" hidden alt="QR">
+    </div>
+    <div class="mbingo-song-info">
+      <div class="mbingo-status" id="statusLabel">Druk op ▶ om te starten</div>
+      <div class="mbingo-revealed-song" id="revealedSong" hidden>
+        <span class="mbingo-reveal-artist" id="revealArtist"></span>
+        <span class="mbingo-reveal-sep"> – </span>
+        <span class="mbingo-reveal-title" id="revealTitle"></span>
+      </div>
+      <div class="mbingo-song-links" id="songLinks" hidden></div>
+      <div class="mbingo-progress" id="songProgress"></div>
+    </div>
+  </div>
+
+  <!-- Bingo card grid (main focus) -->
+  <div class="mbingo-card-wrapper">
+    <div class="mbingo-grid" id="bingoGrid"></div>
+  </div>
+
+  <!-- Player popup (appears on cell tap) -->
+  <div class="mbingo-popup" id="claimPopup" hidden>
+    <div class="mbingo-popup-title">Wie herkent het?</div>
+    <div class="mbingo-popup-buttons" id="popupButtons"></div>
+    <button class="mbingo-popup-close" id="popupClose">✕</button>
+  </div>
+
+  <!-- Sticky action bar -->
+  <div class="mbingo-actions">
+    <button class="btn btn-primary btn-lg" id="nextSongBtn">▶ Volgend nummer</button>
+    <button class="btn btn-secondary btn-lg" id="revealBtn" hidden>👁 Onthul</button>
+  </div>
+
+  <div class="btn-group btn-group--secondary">
+    <a href="/mbingo/setup" class="btn btn-outline">Nieuw spel</a>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <div class="overlay" id="finishOverlay" hidden>
+    <div class="overlay-content">
+      <div class="overlay-icon">🎵</div>
+      <h2>Muziekbingo voorbij!</h2>
+      <div id="finalScores"></div>
+      <a href="/mbingo/setup" class="btn btn-primary">Nieuw spel</a>
+      <a href="/" class="btn btn-secondary">Ander spel</a>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initMbingoPlay(); });</script>
+{% endblock %}

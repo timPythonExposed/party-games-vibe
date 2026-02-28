@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Dit of Dat{% endblock %}
+{% block content %}
+<div class="dod-play-screen">
+  <header class="page-header">
+    <h1>Dit of Dat? 🤔</h1>
+    <p class="subtitle dod-counter" id="dodCounter"></p>
+  </header>
+
+  <div class="dod-card" id="dodCard" hidden>
+    <div class="dod-option dod-option-a" id="optionA">
+      <span class="dod-label">A</span>
+      <span class="dod-text" id="optionAText"></span>
+    </div>
+    <div class="dod-vs">OF</div>
+    <div class="dod-option dod-option-b" id="optionB">
+      <span class="dod-label">B</span>
+      <span class="dod-text" id="optionBText"></span>
+    </div>
+  </div>
+
+  <div class="dod-start" id="dodStart">
+    <p>Klaar voor een leuk debat?</p>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn btn-primary btn-lg" id="dodNextBtn">Volgende dilemma ➜</button>
+  </div>
+
+  <div class="btn-group btn-group--secondary">
+    <button class="btn btn-outline" id="dodResetBtn">🔄 Opnieuw</button>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <div class="overlay" id="emptyOverlay" hidden>
+    <div class="overlay-content">
+      <h2>Alle dilemma's gehad! 🎉</h2>
+      <p>Jullie hebben alle vragen besproken.</p>
+      <button class="btn btn-primary" id="dodResetBtn2">Opnieuw spelen</button>
+      <a href="/" class="btn btn-secondary">Ander spel</a>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initDodPlay(); });</script>
+{% endblock %}

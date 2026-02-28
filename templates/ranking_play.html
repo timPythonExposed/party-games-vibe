@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Ranking{% endblock %}
+{% block content %}
+<div class="ranking-play-screen">
+  <div class="ts-scoreboard" id="scoreboard"></div>
+
+  <div class="bluf-round" id="roundInfo"></div>
+
+  <!-- Phase: waiting for next question -->
+  <div class="ranking-phase" id="phaseNext">
+    <p class="bluf-instruction">Klaar voor de volgende ranking?</p>
+    <button class="btn btn-primary btn-lg" id="nextQuestionBtn">📊 Volgende ranking</button>
+  </div>
+
+  <!-- Phase: question shown, teams discuss -->
+  <div class="ranking-phase" id="phaseDiscuss" hidden>
+    <div class="bluf-statement-card">
+      <p class="bluf-statement" id="questionText"></p>
+    </div>
+    <div class="ranking-items" id="itemsList"></div>
+    <button class="btn btn-primary btn-lg" id="revealBtn">🔍 Onthul juiste volgorde</button>
+  </div>
+
+  <!-- Phase: answer revealed, host awards point -->
+  <div class="ranking-phase" id="phaseReveal" hidden>
+    <div class="bluf-statement-card">
+      <p class="bluf-statement" id="revealQuestionText"></p>
+    </div>
+    <div class="ranking-correct-order" id="correctOrder"></div>
+    <div class="ranking-award-section">
+      <p class="ranking-award-label">Wie zat het dichtst bij? Geef een punt:</p>
+      <div class="ranking-award-buttons" id="awardButtons"></div>
+    </div>
+    <button class="btn btn-primary btn-lg" id="nextAfterRevealBtn">Volgende ranking ➜</button>
+  </div>
+
+  <div class="btn-group btn-group--secondary">
+    <a href="/ranking/setup" class="btn btn-outline">Nieuw spel</a>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <div class="overlay" id="winnerOverlay" hidden>
+    <div class="overlay-content">
+      <div class="overlay-icon">🏆</div>
+      <h2 id="winnerText"></h2>
+      <p>Gefeliciteerd!</p>
+      <a href="/ranking/setup" class="btn btn-primary">Nieuw spel</a>
+      <a href="/" class="btn btn-secondary">Home</a>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initRankingPlay(); });</script>
+{% endblock %}

@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – {{ game_label }} – Kies categorieën{% endblock %}
+{% block content %}
+<header class="page-header">
+  <h1>{{ game_label }}</h1>
+  <p class="subtitle">Kies één of meer categorieën{% if game == "guess-the-year" %} (muzieklijsten){% endif %}!</p>
+  <button type="button" class="icon-btn theme-toggle" id="themeToggle" aria-label="Wissel thema">
+    <span class="icon-sun">&#9728;</span><span class="icon-moon">&#9790;</span>
+  </button>
+</header>
+
+{% if game == "hints" %}
+<details class="rules-box" close>
+  <summary class="rules-toggle">Spelregels</summary>
+  <div class="rules-content">
+
+    <p><strong>Hints</strong> is het ultieme uitbeeld‑spel: jij mag geen woord zeggen, maar wél alles doen wat nodig is om je team het juiste woord te laten raden. Springen? Ja! Dansen? Natuurlijk! Praten? Nope — verboden terrein. Het spel komt uit de Engelse wereld van "Charades", en veel van de bekende gebaren komen daar nog steeds vandaan. </p>
+
+    <h3>Hoe speel je?</h3>
+    <ol>
+      <li><strong>Kies categorieën</strong> — Selecteer één of meer categorieën (of kies <em>Alle</em>) en druk op <em>Start</em>. Zo weet het spel welk soort gekkigheid jij straks mag uitbeelden.</li>
+
+      <li><strong>Uitbeelden maar!</strong>
+        Gebruik je hele lijf: mime, gebaren, gezichtsexpressies — alles om je team naar het juiste antwoord te loodsen (zonder een enkel geluid!).</li>
+
+      <li><strong>Geraden?</strong>
+        Hoera! Druk op <em>Volgend woord</em> en ga meteen door.</li>
+
+      <li><strong>Tijd om?</strong>
+        Als de timer afgaat, stopt de ronde direct. Geen smoesjes. Nieuwe ronde, nieuwe energie!</li>
+    </ol>
+
+    <h3>Standaardgebaren in Hints</h3>
+    <ul>
+      <li><strong>Trekken aan je oorlel:</strong> "klinkt als…" — perfect wanneer het woord ergens op rijmt of er erg op lijkt. </li>
+      <li><strong>Wijzen naar iemand:</strong> diegene heeft een deel van het woord goed. Een traditioneel gebaar uit de Engelse uitdrukking "on the nose"! </li>
+      <li><strong>Vingers omhoog:</strong> aantal woorden van de opdracht. </li>
+      <li><strong>Vingers op je bovenarm:</strong> aantal lettergrepen. </li>
+      <li><strong>Vinger omhoog na een lettergreep:</strong> dit is de lettergreep waar je team op moet focussen. </li>
+    </ul>
+
+<h3>Categoriegebaren (superhandig!)</h3>
+<ul>
+  <li><strong>Objecten:</strong> Doe alsof je iets vasthoudt en bekijkt.</li>
+  <li><strong>Dieren:</strong> Doe een kleine kattensprong.</li>
+  <li><strong>Beroepen:</strong> Sla een nagel met een hamer.</li>
+  <li><strong>Activiteiten:</strong> Maak een kleine loop-beweging.</li>
+  <li><strong>Plaatsen:</strong> Wijs naar een plek in de verte.</li>
+  <li><strong>Uitdrukkingen:</strong> Maak aanhalingstekens met beide handen in de lucht.</li>
+  <li><strong>Films:</strong> Doe het klassieke "filmcamera aanzwengelen".</li>
+  <li><strong>TV‑series:</strong> Teken een rechthoek voor je (een tv‑scherm).</li>
+  <li><strong>Bekende personen:</strong> Doe een moonwalk.</li>
+  <li><strong>Eten & Drinken:</strong> Doe alsof je eet of drinkt.</li>
+</ul>
+
+    <h3>Wat mag niet?</h3>
+    <ul class="rules-forbidden">
+      <li>Praten, fluisteren of geluiden maken (hoe klein ook!).</li>
+      <li>Letters tekenen of schrijven in de lucht.</li>
+      <li>Je lippen zo bewegen dat mensen het kunnen lezen.</li>
+      <li>Iets aanwijzen dat té letterlijk het woord verklapt.</li>
+      <li>Het woord of stukjes ervan zeggen — ook niet in een andere taal.</li>
+    </ul>
+
+      <h3>Tip: Start met de basisgebaren</h3>
+        <ul>
+          <li>Begin met het aangeven van de <strong>categorie</strong> van het woord. </li>
+          <li>Steek daarna het <strong>aantal woorden</strong> omhoog met je vingers. Eentje? Twee? Drie? Laat het zien! </li>
+          <li>Bij meer woorden: laat zien <strong>met welk woord je begint</strong>, door het overeenkomende aantal vingers op te steken. </li>
+          <li>Geef vervolgens het aantal <strong>lettergrepen</strong> door je vingers tegen de binnenkant van je arm te tikken. </li>
+          <li>Wil je aangeven welke lettergreep je bedoelt? Tik opnieuw en steek de juiste vinger omhoog. </li>
+        </ul>
+  </div>
+</details>
+{% elif game == "pictionary" %}
+<details class="rules-box" close>
+  <summary class="rules-toggle">Spelregels</summary>
+  <div class="rules-content">
+
+    <p><strong>Pictionary</strong> is het ultieme tekenspel: jij tekent, je team raadt! Geen woorden, geen gebaren — alleen je pen en creativiteit.</p>
+
+    <h3>Hoe speel je?</h3>
+    <ol>
+      <li><strong>Kies categorieën</strong> — Selecteer één of meer categorieën (of kies <em>Alle</em>) en druk op <em>Start</em>.</li>
+      <li><strong>Teken!</strong> Je ziet een woord met de bijbehorende categorie. Teken het woord zo snel mogelijk zodat je team het kan raden.</li>
+      <li><strong>Geraden?</strong> Druk op <em>Volgend woord</em> en ga door!</li>
+      <li><strong>Tijd om?</strong> Als de timer afgaat, stopt de ronde.</li>
+    </ol>
+
+    <h3>De categorieën</h3>
+    <ul>
+      <li><strong style="color:#3B82F6">Persoon / Plaats / Dier</strong> — Teken een persoon, een plek of een dier.</li>
+      <li><strong style="color:#F97316">Voorwerp</strong> — Teken een object of ding.</li>
+      <li><strong style="color:#10B981">Actie</strong> — Teken een handeling of activiteit.</li>
+      <li><strong style="color:#EAB308">Moeilijk</strong> — Abstracte of lastige begrippen.</li>
+      <li><strong style="color:#EF4444">Iedereen Speelt</strong> — Iedereen mag meedoen met tekenen!</li>
+    </ul>
+
+    <h3>Wat mag niet?</h3>
+    <ul class="rules-forbidden">
+      <li>Praten, geluiden maken of gebaren.</li>
+      <li>Letters, cijfers of woorden schrijven.</li>
+      <li>Symbolen gebruiken die direct het woord verraden (bijv. pijlen naar tekst).</li>
+    </ul>
+
+    <h3>Tips</h3>
+    <ul>
+      <li>Begin met de grote vormen en voeg details toe als je team in de buurt komt.</li>
+      <li>Gebruik streepjes of pijlen om beweging aan te geven bij acties.</li>
+      <li>Teken snel — perfectie is niet nodig, snelheid wel!</li>
+    </ul>
+  </div>
+</details>
+{% elif game == "guess-the-year" %}
+<details class="rules-box" close>
+  <summary class="rules-toggle">Spelregels</summary>
+  <div class="rules-content">
+
+    <p><strong>Raad het Jaar</strong> is een muziekquiz gebaseerd op het bordspel Hitster. Luister naar een nummer en raad tussen welke jaren in je tijdlijn het nummer thuishoort!</p>
+
+    <h3>Hoe speel je?</h3>
+    <ol>
+      <li><strong>Kies muzieklijsten</strong> — Selecteer een of meer radiolijsten waaruit de nummers komen.</li>
+      <li><strong>Stel teams in</strong> — Kies het aantal teams, geef ze namen en bepaal hoeveel rondes nodig zijn om te winnen.</li>
+      <li><strong>Luister!</strong> Scan de QR code met Spotify of klik op de YouTube link om het nummer te beluisteren.</li>
+      <li><strong>Raad het jaar!</strong> Elk team kijkt naar zijn eigen tijdlijn met reeds verzamelde jaren, en raadt tussen welke twee jaartallen het nieuwe nummer valt.</li>
+      <li><strong>Onthul het antwoord</strong> — Druk op "Toon antwoord" om artiest, titel en jaar te zien.</li>
+      <li><strong>Punt toekennen</strong> — Geef een punt aan het team dat het juiste interval koos. Het jaar wordt aan de tijdlijn van dat team toegevoegd.</li>
+      <li><strong>Eerste team dat de doelscore bereikt wint!</strong></li>
+    </ol>
+
+    <h3>Jetons</h3>
+    <ul>
+      <li><strong>Jeton verdienen:</strong> Als een team na het onthullen ook de artiest en titel correct raadt, verdient het een jeton (+Jeton).</li>
+      <li><strong>Jeton inzetten (stelen):</strong> Als je denkt dat een ander team het verkeerde interval heeft gekozen, kun je een jeton inzetten om te stelen. Kies dan zelf twee jaartallen uit je eigen tijdlijn waartussen het nummer valt.</li>
+      <li><strong>Gelukt?</strong> De quizmaster verwijdert het punt van het andere team en geeft het aan jou.</li>
+    </ul>
+  </div>
+</details>
+{% endif %}
+
+{% if request.query_params.get('error') == 'no_selection' %}
+<div class="alert" role="alert">Selecteer minstens één categorie om te starten.</div>
+{% endif %}
+
+<form method="post" action="/start" id="categoryForm">
+  <input type="hidden" name="game" value="{{ game }}">
+  <div class="category-grid">
+    <label class="category-card category-card--all">
+      <input type="checkbox" id="checkAll" aria-label="Selecteer alle categorieën">
+      <span class="card-name">Alle</span>
+      <span class="card-count">{{ categories.values()|sum }} {% if game == "guess-the-year" %}nummers{% else %}woorden{% endif %}</span>
+    </label>
+    {% for name, count in categories.items() %}
+    {% set meta = category_meta.get(name, {}) %}
+    <label class="category-card" {% if meta.get('color') %}style="--cat-color: {{ meta['color'] }}"{% endif %}>
+      <input type="checkbox" name="categories" value="{{ name }}">
+      <span class="card-name">{{ meta.get('label', name|replace('_', ' ')|title) }}</span>
+      <span class="card-count">{{ count }} {% if game == "guess-the-year" %}nummers{% else %}woorden{% endif %}</span>
+    </label>
+    {% endfor %}
+  </div>
+  <button type="submit" class="btn btn-primary btn-lg" id="startBtn" disabled>Start</button>
+</form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkAll  = document.getElementById('checkAll');
+    const boxes     = [...document.querySelectorAll('input[name="categories"]')];
+    const startBtn  = document.getElementById('startBtn');
+
+    function updateStart() {
+      const anyChecked = checkAll.checked || boxes.some(b => b.checked);
+      startBtn.disabled = !anyChecked;
+    }
+
+    checkAll.addEventListener('change', () => {
+      boxes.forEach(b => { b.checked = checkAll.checked; });
+      updateStart();
+    });
+
+    boxes.forEach(b => b.addEventListener('change', () => {
+      if (!b.checked) checkAll.checked = false;
+      if (boxes.every(b => b.checked)) checkAll.checked = true;
+      updateStart();
+    }));
+
+    // Handle "Alle" on submit: send "alle" value
+    document.getElementById('categoryForm').addEventListener('submit', (e) => {
+      if (checkAll.checked) {
+        // uncheck individual, add hidden
+        boxes.forEach(b => { b.checked = false; });
+        let hidden = document.createElement('input');
+        hidden.type = 'hidden'; hidden.name = 'categories'; hidden.value = 'alle';
+        e.target.appendChild(hidden);
+      }
+    });
+
+    // Restore last selection from localStorage
+    try {
+      const saved = JSON.parse(localStorage.getItem('hints.lastSelection') || '[]');
+      if (saved.length) {
+        if (saved.includes('alle')) {
+          checkAll.checked = true;
+          boxes.forEach(b => { b.checked = true; });
+        } else {
+          boxes.forEach(b => { if (saved.includes(b.value)) b.checked = true; });
+          if (boxes.every(b => b.checked)) checkAll.checked = true;
+        }
+        updateStart();
+      }
+    } catch(_) {}
+
+    // Save selection on submit
+    document.getElementById('categoryForm').addEventListener('submit', () => {
+      const sel = checkAll.checked ? ['alle'] : boxes.filter(b => b.checked).map(b => b.value);
+      localStorage.setItem('hints.lastSelection', JSON.stringify(sel));
+    });
+  });
+</script>
+{% endblock %}

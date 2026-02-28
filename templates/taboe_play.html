@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Taboe{% endblock %}
+{% block content %}
+<div class="ts-play-screen">
+  <div class="ts-scoreboard" id="scoreboard"></div>
+  <div class="ts-board-track">
+    <div class="ts-board-labels"><span>START</span><span id="finishLabel">FINISH</span></div>
+    <div class="ts-board-bar-bg"><div id="boardBars"></div></div>
+  </div>
+  <div class="ts-current-team" id="currentTeam"></div>
+
+  <!-- Phase: Start Turn -->
+  <div class="ts-phase" id="phaseStart">
+    <p class="ts-instruction">Kies een omschrijver en druk op start!</p>
+    <button class="btn btn-primary btn-lg" id="startTurnBtn">🎬 Start beurt (60s)</button>
+  </div>
+
+  <!-- Phase: Play (timer + card) -->
+  <div class="ts-phase" id="phasePlay" hidden>
+    <div class="timer-bar-track"><div class="timer-bar" id="timerBar"></div></div>
+    <div class="timer-display ts-timer-display" id="timerDisplay">60</div>
+    <div class="taboe-card" id="taboeCard">
+      <div class="taboe-word" id="taboeWord"></div>
+      <div class="taboe-forbidden" id="taboeForbidden"></div>
+    </div>
+    <div class="taboe-turn-score" id="turnScore">✓ 0 &nbsp; ✗ 0</div>
+    <div class="btn-group">
+      <button class="btn btn-primary" id="correctBtn">✓ Correct</button>
+      <button class="btn btn-outline" id="skipBtn">→ Pas</button>
+      <button class="btn btn-danger-outline" id="taboeBtn">⚠ Taboe!</button>
+    </div>
+  </div>
+
+  <!-- Phase: End turn -->
+  <div class="ts-phase" id="phaseEnd" hidden>
+    <h2 class="ts-score-title">Beurt voorbij!</h2>
+    <div class="ts-score-summary" id="endSummary"></div>
+    <button class="btn btn-primary btn-lg" id="confirmEndBtn">Bevestig & volgende team</button>
+  </div>
+
+  <div class="btn-group btn-group--secondary ts-nav">
+    <button class="btn btn-outline" id="undoBtn" disabled>↩ Ongedaan maken</button>
+    <a href="/taboe/setup" class="btn btn-outline">Nieuw spel</a>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <div class="overlay" id="winnerOverlay" hidden>
+    <div class="overlay-content">
+      <div class="overlay-icon">🏆</div>
+      <h2 id="winnerText"></h2>
+      <p>Gefeliciteerd!</p>
+      <a href="/taboe/setup" class="btn btn-primary">Nieuw spel</a>
+      <a href="/" class="btn btn-secondary">Home</a>
+    </div>
+  </div>
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>document.addEventListener('DOMContentLoaded', () => { initTaboePlay(); });</script>
+{% endblock %}

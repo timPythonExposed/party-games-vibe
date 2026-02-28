@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}{{ app_name }} – Spelen{% endblock %}
+{% block content %}
+<div class="play-screen">
+  <!-- Timer bar -->
+  <div class="timer-bar-track">
+    <div class="timer-bar" id="timerBar"></div>
+  </div>
+
+  <div class="timer-display" id="timerDisplay">60</div>
+
+  <div class="word-container">
+    <div class="category-badge" id="categoryBadge" hidden></div>
+    <div class="word" id="word" aria-live="polite">Druk op "Volgend woord"</div>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn btn-primary btn-lg" id="nextBtn">Volgend woord</button>
+    <button class="btn btn-secondary" id="resetTimerBtn">Reset timer</button>
+  </div>
+  <div class="btn-group btn-group--secondary">
+    <a href="/settings" class="btn btn-outline">Instellingen</a>
+    <a href="/{{ game }}" class="btn btn-outline">Categorieën</a>
+    <a href="/" class="btn btn-outline">Ander spel</a>
+  </div>
+
+  <!-- Overlay time-up -->
+  <div class="overlay" id="timeUpOverlay" hidden>
+    <div class="overlay-content">
+      <div class="overlay-icon">&#9203;</div>
+      <h2>Tijd is om!</h2>
+      <button class="btn btn-primary" id="overlayNextBtn">Volgend woord</button>
+      <button class="btn btn-secondary" id="overlayCloseBtn">Sluiten</button>
+    </div>
+  </div>
+
+  <!-- Overlay empty pool -->
+  <div class="overlay" id="emptyOverlay" hidden>
+    <div class="overlay-content">
+      <h2>Alle woorden gehad!</h2>
+      <p>Je hebt alle woorden in deze selectie gehad. Wil je resetten en opnieuw beginnen?</p>
+      <button class="btn btn-primary" id="emptyResetBtn">Resetten</button>
+      <a href="/{{ game }}" class="btn btn-secondary">Andere categorieën</a>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" hidden></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    initPlay();
+  });
+</script>
+{% endblock %}
